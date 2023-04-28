@@ -2,11 +2,10 @@ pipeline{
     agent any
 
     stages{
-        stage("Test"){
+        stage("Git Checkout"){
             steps{
-                script{
-                    
-                }
+                git credentialsId: 'git', url: 'https://github.com/strugglerCoder/Jenkins.git'
+                echo "Git fetch successfully..."
             }
         }
 
