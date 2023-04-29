@@ -10,10 +10,10 @@ pipeline{
             }
         }
 
-        stage('Build'){
+        stage('Test'){
             steps{
                 script{
-                    echo "Building..."
+                    echo "Testing..."
                 }
             }
         }
