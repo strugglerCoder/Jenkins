@@ -29,7 +29,7 @@ pipeline{
 
     post{
         success{
-            emailext body: 'below Build Success ', recipientProviders: [developers()], subject: 'Build Success', to: 'holeajinkya118@gmail.com'
+            emailext body: 'below Build Success ', recipientProviders: [developers()], subject: 'Build Success', to: 'ajshole@gmail.com'
         }
     }
 }
