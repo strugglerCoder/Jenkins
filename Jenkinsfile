@@ -5,15 +5,15 @@ pipeline{
 
         stage('Git Checkout'){
             steps{
-                git credentialsId: 'git', url: 'https://github.com/strugglerCoder/Jenkins.git'
+                git credentialsId: 'git', url: 'https://github.com/strugglerCoder/Practice-Mode.git'
                 echo "Git fetch successfully..."
             }
         }
 
-        stage('Test'){
+        stage('Download Git Content'){
             steps{
                 script{
-                    echo "Testing..."
+                    sh 'git clone https://github.com/strugglerCoder/Practice-Mode.git'
                 }
             }
         }
@@ -29,7 +29,10 @@ pipeline{
 
     post{
         success{
-            emailext body: 'below Build Success ', recipientProviders: [developers()], subject: 'Build Success', to: 'ajshole@gmail.com'
+            emailext body: 'below Build Success ', 
+            recipientProviders: [developers()], 
+            subject: 'Build Success', 
+            to: 'ajshole@gmail.com'
         }
     }
 }
