@@ -10,10 +10,10 @@ pipeline{
             }
         }
 
-        stage('Download Git Content'){
+        stage('Build'){
             steps{
                 script{
-                    sh 'git clone https://github.com/strugglerCoder/Practice-Mode.git'
+                    echo "...."
                 }
             }
         }
